@@ -555,7 +555,7 @@ class TypeProcessor
         if ($type == 'array') {
             // try to determine class, if it's array of objects
             $docBlock = $param->getDeclaringFunction()->getDocBlock();
-            $pattern = "/\@param\s+([\w\\\_]+\[\])\s+\\\${$param->getName()}[\n\r]/";
+            $pattern = "/\@param\s+([\w\\\_]+\[\])\s+\\\${$param->getName()}\n/";
             $matches = [];
             if (preg_match($pattern, $docBlock->getContents(), $matches)) {
                 return $matches[1];

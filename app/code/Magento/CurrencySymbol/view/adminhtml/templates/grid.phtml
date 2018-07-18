@@ -13,8 +13,10 @@
  */
 ?>
 
-<form id="currency-symbols-form" action="<?= /* @escapeNotVerified */ $block->getFormActionUrl() ?>" method="post">
-    <input name="form_key" type="hidden" value="<?= /* @escapeNotVerified */ $block->getFormKey() ?>" />
+<?php $block->getCurrencySymbolsData();?>
+
+<form id="currency-symbols-form" action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>" method="post">
+    <input name="form_key" type="hidden" value="<?php /* @escapeNotVerified */ echo $block->getFormKey() ?>" />
     <fieldset class="admin__fieldset">
         <?php foreach ($block->getCurrencySymbolsData() as $code => $data): ?>
         <div class="admin__field _required">
